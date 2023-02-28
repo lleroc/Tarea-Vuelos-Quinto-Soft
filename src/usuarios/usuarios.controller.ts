@@ -8,6 +8,7 @@ export class UsuariosController {
 
     @Post()
     insertar(@Body() usuarioDTO:UsuarioDTO){
+        console.log(usuarioDTO);
         return this.usuarioServicio.insertar(usuarioDTO);
     }
 

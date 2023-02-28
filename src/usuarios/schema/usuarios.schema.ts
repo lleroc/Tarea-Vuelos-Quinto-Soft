@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-
 export const UsuarioSchema = new mongoose.Schema({
   nombre: { type: String, require: true },
   usuario: { type: String, require: true },
@@ -10,6 +9,5 @@ export const UsuarioSchema = new mongoose.Schema({
     timestamps:true
 }
 );
-
 UsuarioSchema.index({usuario:1},{unique:true});
 UsuarioSchema.index({email:1},{unique:true});

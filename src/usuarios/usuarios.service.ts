@@ -34,6 +34,6 @@ export class UsuariosService {
 
   async eliminar(id: string) {
     await this.modelo.findByIdAndDelete(id);
-    return { status: HttpStatus.OK, msg: 'Se eliminó correctamete' };
+    return { status: HttpStatus.OK, msg: 'Esta eliminado y no pasaste el nivel' };
   }
 }
