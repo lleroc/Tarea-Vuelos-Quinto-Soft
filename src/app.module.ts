@@ -5,21 +5,20 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { PassajerosModule } from './passajeros/passajeros.module';
-
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath:['.env.development'],
-      isGlobal:true
+      envFilePath: ['.env.development'],
+      isGlobal: true,
     }),
-    MongooseModule.forRoot(process.env.URI_MONGODB
-    ),
+    MongooseModule.forRoot(process.env.URI_MONGODB),
     UsuariosModule,
-    PassajerosModule
+    PassajerosModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
-
